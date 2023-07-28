@@ -2,7 +2,6 @@ version: 0.0
 os: linux
 
 hooks:
-
   AfterInstall:
     - name: Pulling Nginx image
       run: docker pull nginx:latest
