@@ -3,6 +3,8 @@ os: linux
 
 hooks:
   AfterInstall:
+    - location: /home/ubuntu/
+      timeout: 15
     - name: Pulling Nginx image
       run:  docker pull nginx:latest
     - name: Running Nginx container
