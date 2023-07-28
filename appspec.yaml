@@ -2,9 +2,7 @@ version: 0.0
 os: linux
 
 hooks:
-  ApplicationStop: 
-    - name: Stopping Nginx container
-      run: docker stop nginx-container 
+
   AfterInstall:
     - name: Pulling Nginx image
       run: docker pull nginx:latest
