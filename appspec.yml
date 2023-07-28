@@ -13,6 +13,9 @@ permissions:
       - directory
 
 hooks:
+  ApplicationStop:
+    - location: dockerStop.sh
+      runas: root
   ApplicationStart:
     - location: dockerStart.sh
       runas: root
