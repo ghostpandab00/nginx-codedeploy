@@ -1,11 +1,21 @@
 version: 0.0
 os: linux
 
+files:
+  - source: /
+    destination: /home/ubuntu/nginx
+    
+permissions:
+  - object: /home/ubuntu/nginx
+    mode: 775
+    type:
+      - file
+      - directory
+
 hooks:
-  AfterInstall:
-    - location: /home/ubuntu/
-      timeout: 15
-    - name: Pulling Nginx image
-      run:  docker pull nginx:latest
-    - name: Running Nginx container
-      run:  docker run -d --name nginx-container -p 80:80 nginx:latest
+  ApplicationStop:
+    - location: scripts/dockerStop.sh
+      runas: root
+  ApplicationStart:
+    - location: scripts/dockerStart.sh
+      runas: root
