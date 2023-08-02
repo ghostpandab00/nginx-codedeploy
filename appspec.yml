@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ubuntu/nginx
+    destination: /home/ubuntu/nginx/
     
 permissions:
   - object: /home/ubuntu/nginx
